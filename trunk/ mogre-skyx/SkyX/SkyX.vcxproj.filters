@@ -5,6 +5,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Managed Source Files">
+      <UniqueIdentifier>{a6f3254f-8356-4c6a-ba75-78cc839929f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\VClouds\DataManager.cpp">
@@ -61,11 +64,8 @@
     <ClCompile Include="Source\SkyX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MBasicController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MSkyX.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Managed Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +88,29 @@
     <ClInclude Include="include\vclouds\geometrymanager.h" />
     <ClInclude Include="include\vclouds\lightning.h" />
     <ClInclude Include="include\vclouds\lightningmanager.h" />
-    <ClInclude Include="MBasicController.h" />
-    <ClInclude Include="MSkyX.h" />
+    <ClInclude Include="Managed\MAtmosphereManager.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MBasicController.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MCloudsManager.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MGPUManager.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MMeshManager.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MMoonManager.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MSkyX.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MVCloudsManager.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

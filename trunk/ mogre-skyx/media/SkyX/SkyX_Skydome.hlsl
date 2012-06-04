@@ -1,9 +1,10 @@
 /*
 --------------------------------------------------------------------------------
 This source file is part of SkyX.
-Visit http://www.paradise-studios.net/products/skyx/
+Visit ---
 
-Copyright (C) 2009-2012 Xavier Verguín González <xavyiy@gmail.com>
+Copyright (C) 2009 Xavier Verguín González <xavierverguin@hotmail.com>
+                                           <xavyiy@gmail.com>
 
 This program is free software; you can redistribute it and/or modify it under
 the terms of the GNU Lesser General Public License as published by the Free Software
@@ -87,9 +88,9 @@ void main_vp(
 	float fScaledLength = fSampleLength * uScale;
 	float3 v3SampleRay = v3Ray * fSampleLength;
 	float3 v3SamplePoint = v3Start + v3SampleRay * 0.5f;
-
+	
 	// Loop the ray
-	float3 color = float3(0,0,0);
+	float3 color;
 	for (int i = 0; i < uNumberOfSamples; i++)
 	{
 		float fHeight = length(v3SamplePoint);
@@ -104,7 +105,7 @@ void main_vp(
 		// Accumulate color
 		v3Attenuate *= (fDepth * fScaledLength);
 		color += v3Attenuate;
-
+		
 		// Next sample point
 		v3SamplePoint += v3SampleRay;
 	}

@@ -1,9 +1,10 @@
 /*
 --------------------------------------------------------------------------------
 This source file is part of SkyX.
-Visit http://www.paradise-studios.net/products/skyx/
+Visit ---
 
-Copyright (C) 2009-2012 Xavier Verguín González <xavyiy@gmail.com>
+Copyright (C) 2009 Xavier Verguín González <xavierverguin@hotmail.com>
+                                           <xavyiy@gmail.com>
 
 This program is free software; you can redistribute it and/or modify it under
 the terms of the GNU Lesser General Public License as published by the Free Software
@@ -101,19 +102,21 @@ void main_fp(
 	if (Density.x > 0)
 	{
 	    float cos0 = saturate(dot(uSunDirection,iEyePixel));
-	    float c2=cos0*cos0;
+	    float c3=cos0*cos0;
+	    c3*=c3;
 	
-		float Beta = c2*uLightResponse.y*(0.5f+2.5f*saturate(1-2*uSunDirection.y)*Density.y);
+		float Beta = c3*uLightResponse.y*(0.5f+0.5*Density.y);
 
-		float sunaccumulation = max(0.2, saturate(Beta+Density.y*uLightResponse.x+pow(iDistance,1.5)*uLightResponse.w));
+		float sunaccumulation = saturate( Beta+Density.y*uLightResponse.x+pow(iDistance,1.5)*uLightResponse.w );
 		float ambientaccumulation = 
-			  saturate(uAmbientFactors.x + uAmbientFactors.y*i3DCoord.z + uAmbientFactors.z*pow(i3DCoord.z,2) + uAmbientFactors.w*pow(i3DCoord.z,3))*uLightResponse.z;
+			  saturate(uAmbientFactors.x + uAmbientFactors.y*i3DCoord.z + uAmbientFactors.z*pow(i3DCoord.z,2) + uAmbientFactors.w*pow(i3DCoord.z,3))               *uLightResponse.z;
 	    
 		finalcolor = uAmbientColor*ambientaccumulation + uSunColor*sunaccumulation;
 		Opacity = (1 - exp(-Density.x*(7.5-6.5*i3DCoord.z)))*iOpacity;
 	}
 	
     oColor = float4(finalcolor, Opacity);
+    
 
  //oColor.xyz*=0.0001;
  // oColor.a = saturate(oColor.a+1)*iOpacity;

@@ -128,7 +128,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MBasicController.cpp" />
     <ClCompile Include="MSkyX.cpp" />
     <ClCompile Include="Source\AtmosphereManager.cpp" />
     <ClCompile Include="Source\BasicController.cpp" />
@@ -169,8 +168,14 @@
     <ClInclude Include="include\vclouds\lightning.h" />
     <ClInclude Include="include\vclouds\lightningmanager.h" />
     <ClInclude Include="include\vclouds\vclouds.h" />
-    <ClInclude Include="MBasicController.h" />
-    <ClInclude Include="MSkyX.h" />
+    <ClInclude Include="Managed\MAtmosphereManager.h" />
+    <ClInclude Include="Managed\MBasicController.h" />
+    <ClInclude Include="Managed\MCloudsManager.h" />
+    <ClInclude Include="Managed\MGPUManager.h" />
+    <ClInclude Include="Managed\MMeshManager.h" />
+    <ClInclude Include="Managed\MMoonManager.h" />
+    <ClInclude Include="Managed\MSkyX.h" />
+    <ClInclude Include="Managed\MVCloudsManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

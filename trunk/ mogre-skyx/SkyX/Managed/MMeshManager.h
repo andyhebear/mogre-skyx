@@ -3,13 +3,13 @@
 #include "MeshManager.h";
 
 namespace SkyX {
-ref class MMeshManager
+public ref class MMeshManager
 {
 public:
 
-	MMeshManager(void* nativePointer)
+	MMeshManager(MeshManager* nativePointer)
 	{
-		_Mgr = (MeshManager*)&nativePointer;
+		_Mgr = nativePointer;
 	}
 	///** Vertex struct
 	//	 */

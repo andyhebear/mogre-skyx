@@ -3,13 +3,13 @@
 #include "GPUManager.h";
 
 namespace SkyX {
-ref class MGPUManager
+public ref class MGPUManager
 {
 public:
 
-	MGPUManager(void* nativePointer)
+	MGPUManager(GPUManager* nativePointer)
 	{
-		_Mgr = (GPUManager*)&nativePointer;
+		_Mgr = nativePointer;
 	}
 
 	/** Gpu program enum
@@ -22,12 +22,17 @@ public:
 			GPUP_FRAGMENT = 1
 		};
 
-	//	/** Add ground pass (Use for atmospheric scattering effect on the terrain)
-	//	    @param GroundPass Ground pass
-	//		@param AtmosphereRaidus Atmosphere radius (typically far carmera clip plane)
-	//		@param SBT Scene blend type
-	//	 */
-	//	void addGroundPass(Ogre::Pass* GroundPass, const Ogre::Real& AtmosphereRadius, const Ogre::SceneBlendType& SBT = Ogre::SBT_ADD);
+		/** Add ground pass (Use for atmospheric scattering effect on the terrain)
+		    @param GroundPass Ground pass
+			@param AtmosphereRaidus Atmosphere radius (typically far carmera clip plane)
+			@param SBT Scene blend type
+		 */
+		void AddGroundPass(Mogre::Pass^ groundPass, float atmosphereRadius, Mogre::SceneBlendType SBT ){
+			//Ogre::SBT_ADD
+			Ogre::Pass* go = (Ogre::Pass*)groundPass;
+				 Ogre::SceneBlendType isbt = (Ogre::SceneBlendType)SBT;
+			_Mgr->addGroundPass(go,atmosphereRadius,isbt);
+		}
 
 	//	/** Set gpu program int parameter
 	//	    @param GpuP Gpu program type (Vertex/Fragment)

@@ -112,5 +112,14 @@
     <ClInclude Include="Managed\MVCloudsManager.h">
       <Filter>Managed Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Managed\MColorGradient.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MColorFrame.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Managed\MVClouds.h">
+      <Filter>Managed Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

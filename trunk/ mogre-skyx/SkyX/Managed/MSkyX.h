@@ -61,14 +61,6 @@ public:
 			_SkyX = new SkyX((Ogre::SceneManager*)(void*)(sceneManager->NativePtr), (BasicController*)(mBasicController->NativePointer()));
 			_Controller = mBasicController;
 			_SceneManager = sceneManager;
-
-			// Wrap all of the unmanaged managers (no punn intended) :)
-			_MoonManager = gcnew MMoonManager(_SkyX->getMoonManager());
-			_VCloudsManager = gcnew MVCloudsManager(_SkyX->getVCloudsManager());
-			_MeshManager = gcnew MMeshManager(_SkyX->getMeshManager());
-			_GPUManager = gcnew MGPUManager(_SkyX->getGPUManager());
-			_CloudsManager = gcnew MCloudsManager(_SkyX->getCloudsManager());
-			_AtmosphereManager = gcnew MAtmosphereManager(_SkyX->getAtmosphereManager());
 		}
 
 		/** Controller 
@@ -95,6 +87,14 @@ public:
          */
         inline void Create(){
 			_SkyX->create();
+
+			// Wrap all of the unmanaged managers (no punn intended) :)
+			_MoonManager = gcnew MMoonManager(_SkyX->getMoonManager());
+			_VCloudsManager = gcnew MVCloudsManager(_SkyX->getVCloudsManager());
+			_MeshManager = gcnew MMeshManager(_SkyX->getMeshManager());
+			_GPUManager = gcnew MGPUManager(_SkyX->getGPUManager());
+			_CloudsManager = gcnew MCloudsManager(_SkyX->getCloudsManager());
+			_AtmosphereManager = gcnew MAtmosphereManager(_SkyX->getAtmosphereManager());
 		}
 
 		/** Remove SkyX (free resources)

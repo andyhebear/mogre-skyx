@@ -2,14 +2,14 @@
 
 #include "MoonManager.h";
 
-namespace SkyX {
-ref class MMoonManager
+ namespace SkyX {
+public ref class MMoonManager
 {
 public:
 
-	MMoonManager(void* nativePointer)
+	MMoonManager(MoonManager* nativePointer)
 	{
-		_Mgr = (MoonManager*)&nativePointer;
+		_Mgr = nativePointer;
 	}
 	 ///** Constructor
 		//    @param s Parent SkyX pointer
@@ -54,62 +54,63 @@ public:
 		//	return mMoonSceneNode;
 		//}
 
-		///** Set moon size
-		//    @param MoonSize Moon size
-		// */
-		//inline void setMoonSize(const Ogre::Real& MoonSize)
-		//{
-		//	mMoonSize = MoonSize;
-		//}
+		/**
+		    Moon size
+		 */
+		property float MoonSize
+		{
+			float get()
+			{
+				return _Mgr->getMoonSize();
+			}
+        
+			void set(float value)
+			{
+				_Mgr->setMoonSize(value);
+			}
+		}
 
-		///** Get moon size
-		//    @return Moon size
-		// */
-		//inline const Ogre::Real& getMoonSize() const
-		//{
-		//	return mMoonSize;
-		//}
+		/**
+		    Moon halo intensity
+		 */
+		property float MoonHaloIntensity
+		{
+			float get()
+			{
+				return _Mgr->getMoonHaloIntensity();
+			}
+        
+			void set(float value)
+			{
+				_Mgr->setMoonHaloIntensity(value);
+			}
+		}
 
-		///** Set moon halo intensity
-		//    @param MoonHaloIntensity Moon halo intensity
-		// */
-		//inline void setMoonHaloIntensity(const Ogre::Real& MoonHaloIntensity)
-		//{
-		//	mMoonHaloIntensity = MoonHaloIntensity;
-		//}
+		/**
+		    Moon halo strength
+		 */
+		property float MoonHaloStrength
+		{
+			float get()
+			{
+				return _Mgr->getMoonHaloStrength();
+			}
+        
+			void set(float value)
+			{
+				_Mgr->setMoonHaloStrength(value);
+			}
+		}
 
-		///** Get moon halo intensity
-		//    @return Moon halo intensity
-		// */
-		//inline const Ogre::Real& getMoonHaloIntensity() const
-		//{
-		//	return mMoonHaloIntensity;
-		//}
-
-		///** Set moon halo strength
-		//    @param MoonHaloStrength Moon halo strength (linear/exponential fading)
-		// */
-		//inline void setMoonHaloStrength(const Ogre::Real& MoonHaloStrength)
-		//{
-		//	mMoonHaloStrength = MoonHaloStrength;
-		//}
-
-		///** Get moon halo strength
-		//    @return Moon halo strength (linear/exponential fading)
-		// */
-		//inline const Ogre::Real& getMoonHaloStrength() const
-		//{
-		//	return mMoonHaloStrength;
-		//}
-
-		///** Is moon manager created?
-		//    @return true if yes, false if not
-		// */
-		//inline const bool& isCreated() const
-		//{
-		//	return mCreated;
-		//}
-
+		/** Is created?
+		    @return true if yes, false if not
+		 */
+		property bool IsCreated
+		{
+			bool get(){
+				return _Mgr->isCreated();
+			}
+		}
 private:
 	MoonManager* _Mgr;
 };

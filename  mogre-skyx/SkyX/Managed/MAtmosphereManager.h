@@ -3,13 +3,13 @@
 #include "AtmosphereManager.h";
 
 namespace SkyX {
-ref class MAtmosphereManager
+public ref class MAtmosphereManager
 {
 public:
 
-	MAtmosphereManager(void* nativePointer)
+	MAtmosphereManager(AtmosphereManager* nativePointer)
 	{
-		_Mgr = (AtmosphereManager*)&nativePointer;
+		_Mgr = nativePointer;
 	}
 		/** Atmosphere options 
 		 */
@@ -112,11 +112,17 @@ public:
 			@return Atmosphere color at the especified direction
 		 */
 		inline Mogre::Vector3^ GetColorAt(Mogre::Vector3^ direction) {
-			return *((Mogre::Vector3*)&_Mgr->getColorAt(*(Ogre::Vector3*)&direction));
+			return *((Mogre::Vector3*)&_Mgr->getColorAt(GetNativeVector(direction)));
 		}
 
 private:
 	AtmosphereManager* _Mgr;
+
+Ogre::Vector3 GetNativeVector(Mogre::Vector3^ input)
+{
+	return Ogre::Vector3(input->x,input->y,input->z);
+};
+
 };
 
 }

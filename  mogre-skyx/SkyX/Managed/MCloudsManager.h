@@ -3,13 +3,13 @@
 #include "CloudsManager.h";
 
 namespace SkyX {
-ref class MCloudLayer
+public ref class MCloudLayer
 {
 public:
 
-	MCloudLayer(void* nativePointer)
+	MCloudLayer(CloudLayer* nativePointer)
 	{
-		_Mgr = (CloudLayer*)&nativePointer;
+		_Mgr = nativePointer;
 	}
 
 	/** Cloud layer options 

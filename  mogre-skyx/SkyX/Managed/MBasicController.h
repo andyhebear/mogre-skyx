@@ -34,7 +34,7 @@ namespace SkyX {
         
 			void set(Mogre::Vector3^ value)
 			{
-				_BasicController->setTime(*(Ogre::Vector3*)&value);
+				_BasicController->setTime(GetNativeVector(value));
 			}
 		}
 
@@ -99,6 +99,12 @@ namespace SkyX {
 		}
 private:
 		BasicController *_BasicController;
+
+Ogre::Vector3 GetNativeVector(Mogre::Vector3^ input)
+{
+	return Ogre::Vector3(input->x,input->y,input->z);
+};
+
 	};
 
 }

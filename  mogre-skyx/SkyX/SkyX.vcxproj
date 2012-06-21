@@ -47,8 +47,8 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\svn\MogreBuild\Main\OgreSrc\ogre\OgreMain\src;C:\svn\MogreBuild\Main\OgreSrc\ogre\OgreMain\include;C:\svn\MogreBuild\Main\OgreSrc\build\include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\svn\MogreBuild\Main\OgreSrc\ogre\OgreMain\src;C:\svn\MogreBuild\Main\OgreSrc\ogre\OgreMain\include;C:\svn\MogreBuild\Main\OgreSrc\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\svn\MogreBuild\bin\Release.NET4;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\MogreBuild\Main\OgreSrc\ogre\OgreMain\src;E:\svn\MogreBuild\Main\OgreSrc\ogre\OgreMain\include;E:\svn\MogreBuild\Main\OgreSrc\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\MogreBuild\bin\Release.NET4;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -176,6 +176,9 @@
     <ClInclude Include="Managed\MMoonManager.h" />
     <ClInclude Include="Managed\MSkyX.h" />
     <ClInclude Include="Managed\MVCloudsManager.h" />
+    <ClInclude Include="Managed\MColorGradient.h" />
+    <ClInclude Include="Managed\MColorFrame.h" />
+    <ClInclude Include="Managed\MVClouds.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

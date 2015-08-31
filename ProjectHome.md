@@ -1,0 +1,1 @@
+Managed C++/CLI wrapper of SkyX for Mogre.  For write permission please contact mightygoose on the Ogre Addons forum.
